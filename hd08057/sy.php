@@ -9,15 +9,16 @@
 	$sql = "SELECT *FROM avia_title order by date asc";
 	$result = $conn->query($sql); 
 ?>
-<form action="" method="post">
-<?php
-	include "mask/maskBox.php";
-	include "mask/sq1.php";	
-	include "mask/sq2.php";	
-	include "mask/sq3.php";	
-	include "mask/sq4.php";	
-	include "mask/sq5.php";	
-?>	
+
+<form action="fff1.php" method="POST">
+	<?php
+		include "mask/maskBox2.php";
+		include "mask/sq1.php";	
+		include "mask/sq2.php";	
+		include "mask/sq3.php";	
+		include "mask/sq4.php";	
+		include "mask/sq5.php";	
+	?>	
 </form>
 
 <div class="content">

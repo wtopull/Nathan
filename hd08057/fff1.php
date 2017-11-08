@@ -1,33 +1,48 @@
 <?php
+
+echo  6666;
 	if($_SERVER['REQUEST_METHOD']=="POST"){
+		
 		if(isset($_POST['maskBox1']) && $_POST['maskBox1'] == "maskBox_but"){
 			if(!empty($_POST["maskBox_name"])){
 				echo "maskBox_name不为空";
 			}else{
-				echo "maskBox_name为空";
+				echo '<script type="text/javascript">alert("会员账号不能为空"); history.back();</script>';
 			}		
 		}	
 		
 		if(isset($_POST['my_button1']) && $_POST['my_button1'] == "maskBox1_but"){
 			if(!empty($_POST["maskBox1_name"])){
+				echo '<script type="text/javascript">alert("会员账号不能为空"); history.back();</script>';
 				echo "maskBox1_name不为空";
+				
+				exit;
 			}else{
 				echo "maskBox1_name为空";
+				echo '<script type="text/javascript">alert("会员账号不能为空"); history.back();</script>';
+				exit;
 			}
 			if(!empty($_POST["maskBox1_dengji"])){
 				echo "maskBox1_dengji不为空";
+				exit;
 			}else{
 				echo "maskBox1_dengji为空";
+				echo '<script type="text/javascript">alert("会员账号不能为空"); history.back();</script>';
+				exit;
 			}
 			if(!empty($_POST["maskBox1_shenqingyuming"])){
 				echo "maskBox1_shenqingyuming不为空";
+				exit;
 			}else{
 				echo "maskBox1_shenqingyuming为空";
+				exit;
 			}
 			if(!empty($_POST["maskBox1_beiyongyuming"])){
 				echo "maskBox1_beiyongyuming不为空";
+				exit;
 			}else{
 				echo "maskBox1_beiyongyuming为空";
+				exit;
 			}		
 		}
 		

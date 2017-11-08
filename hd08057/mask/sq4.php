@@ -9,21 +9,21 @@
 		</div>
 		<div class="maLeft">
 			<span>会员帐号：</span>
-			<input type="text" name="avia_username" id="maskBox_sq4_username" placeholder="填写你的会员账号" />
+			<input type="text" name="maskBox4_name" id="maskBox_sq4_username" placeholder="填写你的会员账号" />
 		</div>
 		<div class="maLeft">
 			<span>填写金额：</span>
-			<input type="text" name="avia_amount" id="maskBox_sq4_amount" placeholder="填写金额" />
+			<input type="text" name="maskBox4_amount" id="maskBox_sq4_amount" placeholder="填写金额" />
 		</div>
 		<div class="maLeft">
 			<span>验证码：</span>
-			<input type="text" class="code_input" name="avia_yzm" value="" placeholder="填写验证码">
+			<input type="text" class="code_input" name="maskBox4_yzm" value="" placeholder="填写验证码">
 				<span class="v_container1" class="v_container1" style="width:100px;height:36px;">
 					<img src="/php/vc.php" onclick="this.src='/php/vc.php/'+Math.random()">
 				</span>
 			</input>
 		</div>
-		<button id="my_button4" class="my_button4" name="maskBox4" onclick='maskBox_in_sq4()'>立即申请</button>
+		<button id="my_button4" name="my_button4" value="maskBox4_but" class="my_button4" name="maskBox4" onclick='maskBox_in_sq4()'>立即申请</button>
 		<button class="query query4">核审进度查询</button>
 		<a class="maskBoxA" href=""></a>
 	</div>

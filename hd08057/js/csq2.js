@@ -88,18 +88,18 @@ function mkBA(mkB){
 
 
 //点击其它区域，蒙版关闭
-function mask(mbox){
-    $(mbox).click(function(){
-        $(this).hide().children().find("input").val("");
-        return false;
-    });
-    $(".mask").click(function(){
-    	
-        return false;
-    })
-}
-mask(".maskBox1");
-mask(".maskBox2");
-mask(".maskBox3");
-mask(".maskBox4");
-mask(".maskBox5");
+//function mask(mbox){
+//  $(mbox).click(function(){
+//      $(this).hide().children().find("input").val("");
+//      return false;
+//  });
+//  $(".mask").click(function(){
+//  	
+//      return false;
+//  })
+//}
+//mask(".maskBox1");
+//mask(".maskBox2");
+//mask(".maskBox3");
+//mask(".maskBox4");
+//mask(".maskBox5");

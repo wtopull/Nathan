@@ -1,4 +1,3 @@
-	<meta charset="UTF-8">
 <form action="caxun.php" method="post">
 <div class="maskBox">
 	<div class="masDiv">

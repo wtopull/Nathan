@@ -45,7 +45,7 @@
 	<script src="js/scroll.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/csq2.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/checkclick.js" type="text/javascript" charset="utf-8"></script>
+	<!--<script src="js/checkclick.js" type="text/javascript" charset="utf-8"></script>-->
 
 </body>
 </html>

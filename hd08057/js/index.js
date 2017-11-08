@@ -11,15 +11,16 @@ $(".conUl li .zz").on("mouseleave",function(){
 	$(this).find("img").css("display",'none');
 });
 
-$(function(){
-    $(".maskBox").click(function(){
-        $(this).hide();
-        return false;
-    });
-    $(".masDiv").click(function(){
-        return false;
-    })
-})
+//$(function(){
+//	console.log(11111);
+//  $(".maskBox").click(function(){
+//      $(this).hide();
+//      return false;
+//  });
+//  $(".masDiv").click(function(){
+//      return false;
+//  })
+//})
 
 $(".sc").on("click",function(){
 	$(".maskBox").css({"display":"block"});
