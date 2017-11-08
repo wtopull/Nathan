@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>会员审核</title>
+	<style type="text/css">
+		tr td{
+			font-size:20px !important;
+			height:40px;
+			line-height:40px;
+			border:1px solid #333;
+			text-align:center !important;
+		}
+		tr td.er, span.tg{color:green;}
+		tr td.error, span.jj{color:red;}
+		.jj{margin-left:90px;}
+		tr td.si{color:#FFC400;}
+		td input{
+			width:20px !important;
+			height:20px !important;
+			margin:0px !important;
+			padding:0px !important;
+		}
+	</style>
+</head>
+<body>
+	<?php
+		$conn = new mysqli("localhost", "asd", "asdasd", "my_item");
+		$conn -> query('set names utf8');
+		if ($conn -> connect_error) {
+			die("NO");
+		}
+		$sql = "SELECT *FROM avia_title  order by date asc";
+		$result = $conn -> query($sql);
+	?>
+	<div class="centent">
+		<h3 class="course-title">会员审核</h3>
+		<table width="100%">
+			<tr>
+				<th width="20%">会员名</th>
+				<th width="20%">会员状态</th>
+				<th width="25%">状态设置</th>
+				<th width="10%">会员级别</th>
+			</tr>
+			<tr>
+				<td width="20%" class="one">123456789</td>
+				<td width="20%" class="er_error er">通过</td>
+				<td width="25%" class="san">
+					<span class="tg">通过 </span><input type="radio" name="hehe" id="" value="通过" checked/>
+					<span class="jj">拒绝 </span><input type="radio" name="hehe" id="" value="拒绝" />
+				</td>
+				<td width="15%" class="si">黄金会员</td>
+			</tr>
+			<tr>
+				<td width="20%" class="one">987654321</td>
+				<td width="20%" class="er_error error">拒绝</td>
+				<td width="30%" class="san">
+					<span class="tg">通过 </span><input type="radio" name="haha" id="" value="通过" />
+					<span class="jj">拒绝 </span><input type="radio" name="haha" id="" value="拒绝" checked/>
+				</td>
+				<td width="15%" class="si">青铜会员</td>
+			</tr>
+		</table>
+	</div>
+	<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$("td.san input").on("click",function(){
+			var inputVal = $(this).val();
+			if(inputVal=="通过"){
+				$(this).parents().siblings(".er_error").html("通过").addClass("er").removeClass("error");
+				
+			}else if(inputVal=="拒绝"){
+				$(this).parents().siblings(".er_error").html("拒绝").addClass("error").removeClass("er");
+			}
+		});
+	</script>
+</body>
+</html>

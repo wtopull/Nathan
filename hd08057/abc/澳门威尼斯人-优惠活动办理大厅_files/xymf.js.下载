@@ -1,0 +1,219 @@
+(function(ns){    
+        function Scroll(element){  
+                
+            var content = document.createElement("div");  
+            var container = document.createElement("div");  
+            var _this =this;  
+            var cssText = "position: absolute; visibility:hidden; left:0; white-space:nowrap;";  
+            this.element = element;   
+            this.contentWidth = 0;  
+            this.stop = false;  
+			
+			var width_int = element.offsetWidth;
+			var width_str = element.style.width;
+                
+            content.innerHTML = element.innerHTML;  
+                
+            //获取元素真实宽度  
+            content.style.cssText = cssText;			
+			
+            element.appendChild(content);  
+            //this.contentWidth = content.offsetWidth; 
+			
+			
+			
+			if(content.offsetWidth >= width_int){
+				this.contentWidth = content.offsetWidth;		
+			}else{
+				this.contentWidth = width_int;		
+				content.style.width = width_str;
+			}
+			content.style.cssText= "float:left;"; 
+			
+            container.style.cssText = "width: " + (this.contentWidth*2) + "px; overflow:hidden";  
+            container.appendChild(content);  
+            container.appendChild(content.cloneNode(true));  
+            element.innerHTML = "";  
+            element.appendChild(container);  
+                
+            container.onmouseover = function(e){  
+                clearInterval(_this.timer);  
+                    
+            };  
+                
+            container.onmouseout = function(e){  
+                _this.timer = setInterval(function(){   
+                    _this.run();  
+                },20);            
+    
+                    
+            };  
+            _this.timer = setInterval(function(){   
+                _this.run();  
+            }, 20);  
+        }  
+            
+        Scroll.prototype = {  
+                
+            run: function(){                      
+                var _this = this;  
+                var element = _this.element;                    
+                element.scrollLeft = element.scrollLeft + 1;                      
+                if(element.scrollLeft >=  this.contentWidth ) {  
+                        element.scrollLeft = 0;  
+                }  
+            }  
+        };  
+    ns.Scroll = Scroll;   
+}(window)); 
+
+$(document).ready(function(){
+	
+	$('.query').on('click', function(){$(".con1").show();$(".con2").hide();layer.open({type: 1, zIndex: 100, title: false,area: ['743px', '584px'],skin: 'layui-layer-nobg',shade: 0.7,closeBtn :false,shadeClose: true,content: $('#querycon')});});
+	$('.check').on('click', function(){$(".con1").show();$(".con2").hide();layer.open({type: 1, zIndex: 100, title: false,area: ['743px', '584px'],skin: 'layui-layer-nobg',shade: 0.7,closeBtn :false,shadeClose: true,content: $('#querycon')});});
+
+	
+	$(".checksub").click(function(){
+			var uname = $("#query_user").val();
+			if(uname == ""){
+				alert("会员帐号不能为空!");
+				return false;
+			}
+			$(".con1").hide();
+			$(".con2").fadeIn();
+			queryPage(1);		
+	});
+	
+
+	
+	$.get('api.php?action=advice',function(data){
+					var sHtml = data;
+					$("#msgNews").html(sHtml);
+					new Scroll(document.getElementById("msgNews"));  
+				});
+  
+    lotterylist();
+  
+})
+
+function lotterylist() {
+	$.ajax({
+		url: 'api.php?action=list',
+		dataType: 'json',
+		cache: false,
+		type: 'GET',
+		success: function(obj) {
+			var sAwardEle = "";
+			$.each(obj, function(i, award) {				
+				sAwardEle += '<li>恭喜会员：<span>'+award.user_name+'</span>&nbsp;成功办理&nbsp;<i>'+award.active_name+'</i></li>';
+			});
+			$(".infoList").html(sAwardEle);
+			jQuery(".list").slide({mainCell:".bd ul",autoPlay:true,effect:"topMarquee",vis:5,interTime:50,trigger:"click"});
+
+		},
+		error: function(XMLHttpRequest, textStatus, errorThrown) {
+			var x = 1
+		}
+	})
+}
+
+var pagesize = 5;
+
+function queryPage(page) {
+	$.ajax({
+		url: 'api.php?action=querylist&p=' + page + '&size=' + pagesize,
+		dataType: 'json',
+		cache: false,
+		data: {
+			user_name: $("#query_user").val(),
+			act_id: $("#query_option").val()
+		},
+		type: 'GET',
+		success: function(obj) {
+			if (obj.count != 0) {
+				var sHtml1 = "";
+				$.each(obj.data, function(i, award) {
+					var temp = '<td>等待审核</td>';
+					if (award.state == "1") {
+						temp = '<td><font color=green>已通过</font></td>'
+					}
+					if (award.state == "2") {
+						temp = '<td><font color=red>已拒绝</font></td>'
+					}
+					sHtml1 += "<tr><td>" + award.user_name + "</td><td>" + award.apply_time + "</td>" + temp + "<td><span class='tip' title='" + award.check_desc + "' >点击查看</span></td></tr>";
+				}) 
+				var sPage = Paging(page, pagesize, obj.count, 2, "queryPage", '', '', '上一页', '下一页');
+				$(".pages").html(sPage);
+				$("#query_content").html(sHtml1)
+				$('.tip').miniTip({'className':'green'});
+			} else {
+				$("#query_content").html("<tr><td colspan='4'>未查询到信息</td></tr>")
+			}
+		},
+		error: function(XMLHttpRequest, textStatus, errorThrown) {
+			var x = 1
+		}
+	})
+}
+function Paging(pageNum, pageSize, totalCount, skipCount, fuctionName, currentStyleName, currentUseLink, preText, nextText, firstText, lastText) {
+	var returnValue = "";
+	var begin = 1;
+	var end = 1;
+	var totalpage = Math.floor(totalCount / pageSize);
+	if (totalCount % pageSize > 0) {
+		totalpage++
+	}
+	if (preText == null) {
+		firstText = "prev"
+	}
+	if (nextText == null) {
+		nextText = "next"
+	}
+	begin = pageNum - skipCount;
+	end = pageNum + skipCount;
+	if (begin <= 0) {
+		end = end - begin + 1;
+		begin = 1
+	}
+	if (end > totalpage) {
+		end = totalpage
+	}
+	for (count = begin; count <= end; count++) {
+		if (currentUseLink) {
+			if (count == pageNum) {
+				returnValue += "<a class=\"" + currentStyleName + "\" href=\"javascript:void(0);\" onclick=\"" + fuctionName + "(" + count.toString() + ");\">" + count.toString() + "</a> "
+			} else {
+				returnValue += "<a href=\"javascript:void(0);\" onclick=\"" + fuctionName + "(" + count.toString() + ");\">" + count.toString() + "</a> "
+			}
+		} else {
+			if (count == pageNum) {
+				returnValue += "<a class=\"" + currentStyleName + "\">" + count.toString() + "</a> "
+			} else {
+				returnValue += "<a href=\"javascript:void(0);\" onclick=\"" + fuctionName + "(" + count.toString() + ");\">" + count.toString() + "</a> "
+			}
+		}
+	}
+	if (pageNum - skipCount > 1) {
+		returnValue = " ... " + returnValue
+	}
+	if (pageNum + skipCount < totalpage) {
+		returnValue = returnValue + " ... "
+	}
+	if (pageNum > 1) {
+		returnValue = "<a href=\"javascript:void(0);\" onclick=\"" + fuctionName + "(" + (pageNum - 1).toString() + ");\"> " + preText + "</a> " + returnValue
+	}
+	if (pageNum < totalpage) {
+		returnValue = returnValue + " <a href=\"javascript:void(0);\" onclick=\"" + fuctionName + "(" + (pageNum + 1).toString() + ");\">" + nextText + "</a>"
+	}
+	if (firstText != null) {
+		if (pageNum > 1) {
+			returnValue = "<a href=\"javascript:void(0);\" onclick=\"" + fuctionName + "(1);\">" + firstText + "</a> " + returnValue
+		}
+	}
+	if (lastText != null) {
+		if (pageNum < totalpage) {
+			returnValue = returnValue + " " + " <a href=\"javascript:void(0);\" onclick=\"" + fuctionName + "(" + totalpage.toString() + ");\">" + lastText + "</a>"
+		}
+	}
+	return returnValue
+}

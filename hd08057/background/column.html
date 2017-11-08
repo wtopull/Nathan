@@ -1,0 +1,27 @@
+
+<?php
+	$conn = new mysqli("localhost", "asd", "asdasd", "my_item");
+	$conn->query('set names utf8');
+	if($conn->connect_error){
+		die($conn->connect_error);
+	}
+	$sql = "SELECT *FROM avia_title";
+	$result = $conn->query($sql); 
+?>
+
+<div class="content">
+	<ul class="conUl">
+		<?php
+			if($result->num_rows > 0){
+				while($row = $result->fetch_assoc()){
+		?>
+		<li class="conLi">
+			<img src="<?php echo 'background/'.$row["ac_tu"]; ?>" width="100" height="100" alt="..."/>
+			<p><?php echo $row["ac_title"]; ?></p>
+		</li>
+		<?php
+				}
+			}	
+		?>
+	</ul>
+</div>

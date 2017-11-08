@@ -1,0 +1,45 @@
+<style type="text/css">
+	div.mui-collapse-content p{
+		height:40px;
+		line-height:40px;
+		padding-left:45px;
+	}
+	div.mui-collapse-content p:hover{background:#eee;}
+	.mui-table-view-cell.mui-collapse .mui-collapse-content{
+		padding:0;
+	}
+</style>
+<div class="layui-side layui-bg-black">
+	<div class="layui-side-scroll">
+		<ul class="mui-table-view col-md-12" style="padding-right:0;">
+			<!--<li class="mui-table-view-cell mui-collapse mui-active">
+				<a class="mui-navigate-right">优惠大厅</a>
+				<div class="mui-collapse-content">
+					<p><a ui-sref=".lobbyL1">大厅状态</a></p>
+					<p><a ui-sref=".lobbyL2">优惠设置</a></p>
+					<p><a ui-sref=".lobbyL3">优惠添加</a></p>
+					<p><a ui-sref=".lobbyL4">记录查询</a></p>
+				</div>
+			</li>-->
+			<li class="mui-table-view-cell mui-collapse">
+				<a class="mui-navigate-right">会员管理</a>
+				<div class="mui-collapse-content">
+					<p><a ui-sref=".memberL1">会员状态</a></p>
+					<p><a ui-sref=".memberL2">会员审核</a></p>
+					<p><a ui-sref=".memberL3">优惠大厅状态</a></p>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="container-fluid">
+		<div class="row contBox">
+			<div class="left col-md-2">
+				<div class="" ui-view="viewA"></div>
+			</div>
+			<div class="right col-md-9">
+				<div class="" ui-view="viewa"></div>
+			</div>
+		</div>
+	</div>
+	
+</div>

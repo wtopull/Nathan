@@ -1,0 +1,26 @@
+
+<?php
+	$conn = new mysqli("localhost", "asd", "asdasd", "my_item");
+	$conn->query('set names utf8');
+	if($conn->connect_error){
+		die("NO");
+	}
+	$sql = "SELECT *FROM avia_title  order by date asc";
+	$result = $conn->query($sql); 
+?>
+<div class="content">
+	<ul class="conUl">
+		<?php
+			if($result->num_rows > 0){
+				while($row = $result->fetch_assoc()){
+		?>
+		<li class="conLi">
+			<img src="<?php echo '/shop/background/'.$row["ac_tu"]; ?>"/>
+			<p><?php echo $row["ac_title"]; ?></p>
+		</li>
+		<?php
+				}
+			}	
+		?>
+	</ul>
+</div>

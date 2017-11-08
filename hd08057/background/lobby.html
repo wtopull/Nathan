@@ -1,0 +1,33 @@
+<style type="text/css">
+	.kk li a.click_color{
+		background:#D0F8CE !important ;
+		color:#5DBA5D !important;
+		font-weight:bold !important;
+		text-shadow: 0 0px 0 #fff !important;
+	}
+	.kk li{
+		text-align: center;
+	}
+	.kkk li a.click_color1{
+		background:#F5F5F5 !important;
+	}
+</style>
+	<script type="text/javascript">
+		$(".kk li a").on("click",function(){
+			$(this).addClass("click_color").parents().siblings().children("a").removeClass("click_color");
+		});
+		$(".kkk li a").on("click",function(){
+			$(this).addClass("click_color1").parents().siblings().children("a").removeClass("click_color1");
+		});
+	</script>
+<div class="container">
+	<ul class="nav nav-tabs kkk">
+		<li><a class="brand click_color1" ui-sref=".lobby1">优惠大厅</a></li>
+		<li><a class="brand" ui-sref=".lobby2">优惠发布</a></li>
+	</ul>
+	<div class="row">
+		<div class="span12">
+			<div class="well" ui-view="viewB"></div>
+		</div>
+	</div>	
+</div>

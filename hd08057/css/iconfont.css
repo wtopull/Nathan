@@ -1,0 +1,65 @@
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1499485973872'); /* IE9*/
+  src: url('iconfont.eot?t=1499485973872#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1499485973872') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1499485973872') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1499485973872#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-07:before { content: "\e611"; }
+
+.icon-addition_fill:before { content: "\e6e0"; }
+
+.icon-addpeople_fill:before { content: "\e6e1"; }
+
+.icon-addressbook_fill:before { content: "\e6e2"; }
+
+.icon-barrage_fill:before { content: "\e6e3"; }
+
+.icon-browse_fill:before { content: "\e6e4"; }
+
+.icon-camera_fill:before { content: "\e6e7"; }
+
+.icon-clock_fill:before { content: "\e6e8"; }
+
+.icon-collection_fill:before { content: "\e6ea"; }
+
+.icon-coordinates_fill:before { content: "\e6ec"; }
+
+.icon-createtask_fill:before { content: "\e6ee"; }
+
+.icon-delete_fill:before { content: "\e6f2"; }
+
+.icon-document_fill:before { content: "\e6f3"; }
+
+.icon-enterinto_fill:before { content: "\e6f9"; }
+
+.icon-homepage_fill:before { content: "\e702"; }
+
+.icon-live_fill:before { content: "\e708"; }
+
+.icon-lock_fill:before { content: "\e709"; }
+
+.icon-mail_fill:before { content: "\e70a"; }
+
+.icon-message_fill:before { content: "\e70d"; }
+
+.icon-offline_fill:before { content: "\e712"; }
+
+.icon-trash_fill:before { content: "\e738"; }
+
+.icon-searchfill:before { content: "\e742"; }
+
+.icon-packup:before { content: "\e749"; }
+
+.icon-unfold:before { content: "\e74a"; }
+
