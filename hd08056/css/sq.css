@@ -1,0 +1,49 @@
+.maskBox{
+	width:100%;height:100%;background:rgba(4,4,1,0.7);
+	position:fixed;z-index: 10000;top:0px;display:none;
+}
+.maskBox .masDiv{position:relative;left:50%;top:50%;margin-left:-371px;margin-top:-292px;
+	width:742px;height:584px;text-align:center;
+	background:url(../image/masking.png) no-repeat;
+}
+.masDiv p{color:#333;}
+.maskBox .img1{margin-top:60px;}
+.maskBox .masDiv button{
+	width:94px;height:35px;background:#D4AE53;border-radius:2px;
+	color:#fff;font:bold 14px "微软雅黑";border:none;cursor:pointer;}
+.masDiv .sq1p1{
+	font:bold 24px/25px "微软雅黑";
+	color: #fdfd73;
+    margin-top:26px;
+    text-align:center;
+    margin-bottom:40px;
+}
+.maLeft{text-align:left;color:#949494;font-size:14px;}
+.maLeft span{
+	width:256px;height:50px;text-align:right;
+	display:inline-block;
+}
+.maLeft .maLeftP b{
+	color: #FEF000;
+    font-size: 15px;
+    font-weight: bold;
+}
+.maLeft .maLeftP span{text-align:left;}
+.maskBox .maLeft input, .maskBox .maRight select{padding-left:15px;width:238px;height:34px;border:1px solid #7C7C7C;}
+.maskBox .maLeft input{width:223px;}
+.maskBox .masDiv a{
+	display:inline-block;background:url(../image/close.png) no-repeat left top;
+	width:101px;height:113px;position:absolute;top:0px;right:0px;
+}
+.con1{display:block;}
+.con2{height:310px;display:none;}
+.con2 table{width:600px;margin:0 auto;}
+.con2 tr td{
+	text-align:left;
+    border:1px solid #545454;
+    font:14px/40px "微软雅黑";
+    height:40px;
+    color:#959595;
+    padding-left:20px;
+}
+#query_content tr td{text-align:left;padding-left:20px;}
