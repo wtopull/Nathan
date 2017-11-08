@@ -1,0 +1,8 @@
+<?php
+	header('content-type:text/html;charset=utf-8');
+	define('APP-DEBUG',TRUE);
+	
+	define('CSS_URL','/Public/css/');
+	
+	
+	include "../ThinkPHP/ThinkPHP.php";

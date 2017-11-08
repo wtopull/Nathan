@@ -1,0 +1,22 @@
+﻿p.foot_self{ min-height:40px; line-height:40px; background:#f5f5f5; border-top:1px solid #ddd;  margin:0; padding-left:15px; text-align:center !important; }
+.pro_self p{ font-size:22px; }
+.content p{  line-height:26px; text-indent:2em; padding-top:20px; }
+.box{ position:absolute; top:50%; left:50%; margin-top:-120px; margin-left:-225px; width:450px; height:240px; border:1px solid #eaeaea; }
+.box h1{ padding:0; height:42px; font-size:18px; line-height:42px; background:#000; color:#fff; text-align:center; margin:0 0 30px !important; }
+.me{max-width:280px;max-height:400px;width:40%;border-radius:50%;margin-top:5vh;}
+.h2Con{margin-top:12vh;}
+.pCon2,.pCon,.pConRed{color:#888;font:16px/24px"微软雅黑";}
+.pCon,.pConRed{margin-top:3vh;}
+.Con2{background:url(../image/achivements-bg.jpg) no-repeat center; background-attachment:fixed;min-height:80vh;}
+.pConRed{color:#E87E04;font:22px/24px"微软雅黑";}
+.Con3,.Con5{min-height:60vh;background:#fff;}
+.Con4{background:url(../image/skills-bg.jpg) no-repeat center; background-attachment:fixed;min-height:100vh;}
+.container{text-align:center;}
+#top{
+	width:45px;height:45px;background:red;
+    border-radius:8px;position:fixed;
+    right:20px;bottom:20%;cursor:pointer;text-align:center;
+    line-height:45px;z-index:1000;opacity:0.6;
+}
+.Conn{width:22rem;height:22rem;padding:1rem;}
+.Connt{margin-top:2rem;}

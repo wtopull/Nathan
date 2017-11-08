@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Tabs</title>
+	<link type="text/css" rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style type="text/css">
+		.align-top {vertical-align: top}
+		.city-container .content {border: 1px solid #d7dadb;background-color: #ffffff;}
+		.city-container .content .big-title {font-size: 20px;margin: 10px 0px 10px 0;padding-bottom: 6px;border-bottom: 1px solid #d7dadb;}
+		.city-container .content .name-header {margin: 15px;}
+		.city-container .content .name-header .name {width: 20%;padding: 18px;border: 1px solid #d7dadb;margin-right: -1px;margin-bottom: -1px;cursor: pointer;}
+		.city-container .content .name-header .name:hover {background: #f3f4f8;}
+		.city-container .content .name-header .name.active {color: #38a884;background: #f3f4f8;}
+		.city-container .content .name-card {margin: 0 0 20px;height: 350px;}
+		.city-container .content .name-card .desc {font-size: 20px;}
+	</style>
+	<script src="../js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body ng-app="myapp">
+	<div class="container city-container" ng-controller="my_app">
+	    <h1 class="course-title">Tabs标签</h1>
+	    <div class="row">
+	        <div class="content">
+	            <div class="col-xs-12 big-title">城市列表 <span class="badge align-top">{{cityList.length}}</span></div>
+	            <div class="row name-header">            	
+	                <div class="col-xs-2 name text-center " ng-repeat="per in cityList" ng-click='hit($index)' ng-class='{active: $index==active}'>{{per.city}}</div>
+	            </div>
+	            <div class="row name-card">
+	                <div class="col-xs-12">
+	                    <h1>{{route}}简介：</h1>
+	                    <div class="desc">{{intro}}</div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+    <script type="text/javascript">
+    	var app=angular.module("myapp",[]);
+    	app.controller("my_app",function($scope){
+    		$scope.cityList = [
+    			{city:'上海',description:'上海（Shanghai），简称“沪”或“申”，中华人民共和国直辖市，地处长江入海口，隔东中国海与日本九州岛相望，南濒杭州湾，西与江苏、浙江两省相接。[1-2]上海是一座国家历史文化名城，拥有深厚的近代城市文化底蕴和众多历史古迹。江南的吴越传统文化与各地移民带入的多样文化相融合，形成了特有的海派文化。上海市已经成功举办了2010年世界博览会、中国上海国际艺术节、上海国际电影节等大型国际活动。[3-4]'},
+				{city: '襄阳',description: '襄阳，湖北省下辖地级市、中国历史文化名城、楚文化、汉文化、三国文化的发源地，已有2800多年历史，历代为经济军事要地。素有“华夏第一城池、铁打的襄阳、兵家必争之地”之称。[1-3]地理位于湖北省西北部，汉江中游平原腹地。襄阳因地处襄水之阳而得名，汉水穿城而过，分出南北两岸的襄阳、樊城，隔江相望。两城历史上都是军事与商业重镇。1949年以后两城合二为一称襄樊市，分设襄城、樊城两区。2010年12月9日，襄樊市正式更名为襄阳市。境辖3个城区（襄州、襄城、樊城）、3个县级市（枣阳、宜城、老河口）、3个县（南漳、保康、谷城）和3个开发区（国家级高新技术产业开发区、国家级经济技术开发区、鱼梁洲旅游经济开发区），总面积1.97万平方公里。'},
+				{city: '武汉',description: '武汉，简称“汉”，中国湖北省省会[1]  。地处江汉平原东部。世界第三大河长江及其最大支流汉水横贯市境中央，将武汉城区一分为三，形成了武昌、汉口、汉阳三镇隔江鼎立的格局。唐朝诗人李白曾在此写下“黄鹤楼中吹玉笛，江城五月落梅花”，因此武汉自古又称江城。[2]  全市现辖13个城区，3个国家级开发区，面积8467平方公里，境内江河纵横、湖港交织，上百座大小山峦，166个湖泊座落其间，水域面积，占全市面积四分之一，构成了极具特色的滨江滨湖水域生态环境。'	},
+				{city: '上海',description: '上海（Shanghai），简称“沪”或“申”，中华人民共和国直辖市，地处长江入海口，隔东中国海与日本九州岛相望，南濒杭州湾，西与江苏、浙江两省相接。[1-2]上海是一座国家历史文化名城，拥有深厚的近代城市文化底蕴和众多历史古迹。江南的吴越传统文化与各地移民带入的多样文化相融合，形成了特有的海派文化。上海市已经成功举办了2010年世界博览会、中国上海国际艺术节、上海国际电影节等大型国际活动。[3-4] '},
+				{city: '重庆',description: '重庆，简称巴和渝，别称山城、渝都、桥都，雾都，是中华人民共和国中央直辖市。重庆因嘉陵江古称“渝水”，故重庆简称“渝”。北宋崇宁元年（1102年），改渝州为恭州。南宋淳熙16年（1189年）正月，孝宗之子赵惇先封恭王，二月即帝位为宋光宗皇帝，称为“双重喜庆”，遂升恭州为重庆府，重庆由此而得名。'},
+				{city: '纽约',description: '纽约（New York），是纽约都会区的核心，也是美国最大城市，同时也是世界最大的城市之一。为了与其所在的纽约州相区分，被称为纽约市（New York City，官方名称为：The City of New York）。[1]纽约位于美国东海岸的东北部，是美国人口最多的城市，也是个多族裔聚居的多元化城市，拥有来自97个国家和地区的移民，在此使用的语言达到800种。截至2012年，纽约大约有800万人，居住在789平方千米的土地上。[2] '},
+				{city: '日本',description: '日本（Japan），全称日本国，位于亚洲东部、太平洋西北。国名意为“日出之国”，领土由本州、四国、九州、北海道四大岛及7200多个小岛组成，总面积37.8万平方千米。主体民族为和族，通用日语，总人口约1.26亿。公元3世纪中叶，其境内出现较大的国家“大和国”。公元645年，日本向中国唐朝学习，进行大化改新。12世纪后期，进入幕府时代。'	},
+				{city: '台湾',description: '台湾（Taiwan）位于中国大陆东南沿海的大陆架上，东临太平洋，[1]  东北邻琉球群岛，[2]  南界巴士海峡与菲律宾群岛相对，[3]  西隔台湾海峡与福建省相望，[4-5]  总面积约3.6万平方千米，包括台湾岛及兰屿、绿岛、钓鱼岛等21个附属岛屿和澎湖列岛64个岛屿。台湾岛面积35882.6258平方千米，[6]  是中国第一大岛，[7]  7成为山地与丘陵，平原主要集中于西部沿海，地形海拔变化大。由于地处热带及亚热带气候之交界，自然景观与生态资源丰富多元。人口约2350万，逾7成集中于西部5大都会区，[8]  其中以首要都市台北为中心的台北都会区最大。'},
+				{city: '悉尼',description: '悉尼（Sydney，台湾及海外华人聚居区译为“雪梨”），澳大利亚第一大城市及新南威尔士州首府，澳大利亚经济、金融、航运和旅游中心，是南半球最大的城市和重要的港口、世界著名的国际大都市。'	},
+				{city: '西双版纳',description: '西双版纳傣族自治州，位于中华人民共和国云南省最南端，是云南省下辖的一个少数民族自治州。地处北纬约21°10’，东经99°55’至101°50’之间，属北回归线以南的热带湿润区。东西面与江城县、普洱市相连；西北面与澜沧县为邻；东南部、南部和西南部分别与老挝、缅甸山水相连，邻近泰国和越南，与泰国的直线距离仅200余公里。东距太平洋的北部湾400多公里，西距印度洋的孟加拉湾600余公里。边界线长达966.3公里，约等于云南省边境线总长的1/4。'},
+				{city: '宁夏回族自治区',description: '宁夏回族自治区，简称宁，是中国五大少数民族自治区之一。处在中国西部的黄河上游地区，东邻陕西省，西部、北部接内蒙古自治区，南部与甘肃省相连。南北相距约456公里，东西相距约250公里，总面积为6.6万多平方千米。自治区首府银川。'},
+				{city: '香格里拉',description: '香格里拉市是迪庆藏族自治州下辖市之一，市境位于云南省西北部，是滇、川及西藏三省区交汇处，也是“三江并流”风景区腹地。截止到2014年，香格里拉市总面积11613平方公里，辖4个镇、7个乡，共有6个社区、58个行政村。'},
+				{city: '武汉',description: '武汉，简称“汉”，中国湖北省省会[1]  。地处江汉平原东部。世界第三大河长江及其最大支流汉水横贯市境中央，将武汉城区一分为三，形成了武昌、汉口、汉阳三镇隔江鼎立的格局。唐朝诗人李白曾在此写下“黄鹤楼中吹玉笛，江城五月落梅花”，因此武汉自古又称江城。[2]  全市现辖13个城区，3个国家级开发区，面积8467平方公里，境内江河纵横、湖港交织，上百座大小山峦，166个湖泊座落其间，水域面积，占全市面积四分之一，构成了极具特色的滨江滨湖水域生态环境。'	},
+				{city: '呼和浩特',description: '呼和浩特是内蒙古自治区首府，是内蒙古的经济、文化、科教和金融中心，呼包银城市群核心城市，呼包鄂城市群中心城市。呼和浩特有着悠久的历史和光辉灿烂的文化，是华夏文明的发祥地之一，旧称为归绥，原为绥远省省会，蒙绥合并后，自治区首府由乌兰浩特迁入呼和浩特。[1]  呼和浩特是蒙古语，意为“青色的城市”。呼和浩特是以蒙古族为主体，汉族占多数，回、满、达斡尔、鄂温克等41个民族聚居的城市。有国际列车航线通往乌兰巴托。呼和浩特是国家历史文化名城、国家森林城市、国家创新型试点城市、全国民族团结进步模范城市、全国双拥模范城市、中国优秀旅游城市和中国经济实力百强城市，被誉为“中国乳都”。'},
+				{city: '新西兰',description: '新西兰（New Zealand），又译纽西兰，是一个资本主义国家，政治体制实行君主立宪制混合英国式议会民主制，现为英联邦成员国之一。新西兰位于太平洋西南部，领土由南岛、北岛两大岛屿组成，以库克海峡分隔，南岛邻近南极洲，北岛与斐济及汤加相望。首都惠灵顿以及最大城市奥克兰均位于北岛[1]  。'}
+			];
+    		$scope.active="0";
+			$scope.route=$scope.cityList[0].city;
+			$scope.intro=$scope.cityList[0].description;
+	        $scope.hit=function(i){
+	            $scope.active=i;
+	            $scope.route=$scope.cityList[i].city;
+		        $scope.intro=$scope.cityList[i].description;
+	        };
+    	})
+    </script>
+</body>
+</html>

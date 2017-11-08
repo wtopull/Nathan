@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>省份联动</title>
+	<script src="../js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body ng-app="myApp">
+<div ng-controller="my_state">
+	请选择省份:
+	<select name="state" ng-model="ar"  ng-options="v.province for v in chinaCities" ng-change="change(a)">
+		<option value="">请选择省</option>
+	</select>
+	请选择城市:
+	<select name="city" ng-model="city" ng-switch on="ar" ng-options="v for v in ar.cities">
+		<option value="">请选择市</option>
+	</select>
+	<hr>
+	<p>(选择信息：province={{ar}}&nbsp; city={{city}})</p>
+</div>	
+	<script type="text/javascript">
+		var app=angular.module("myApp",[]);
+		app.controller("my_state",function($scope){
+			$scope.chinaCities = [
+			    { py: 'sh', province: '上海', cities: ['上海'] },
+			    { py: 'bj', province: '北京', cities: ['北京'] },
+			    { py: 'hb', province: '湖北', cities: ['武汉','鄂州','恩施','黄冈','黄石','荆门','荆州','十堰','随州','咸宁','襄阳','孝感','宜昌'] },
+			    { py: 'zj', province: '浙江', cities: ['杭州','宁波','湖州','嘉兴','金华','绍兴','台州','温州','舟山','衢州','丽水'] },
+			    { py: 'nmg', province: '内蒙古', cities: ['呼和浩特','包头','阿拉善','巴彦淖尔','赤峰','呼伦贝尔','乌海','乌兰察布','锡林郭勒','兴安','鄂尔多斯','通辽'] },
+			    { py: 'yn', province: '云南', cities: ['昆明','西双版纳','保山','楚雄','大理','德宏','红河','丽江','临沧','怒江','曲靖','思茅','文山','玉溪','昭通','迪庆州'] }
+			  ];
+		});
+	</script>
+</body>
+</html>

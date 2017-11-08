@@ -1,0 +1,31 @@
+*{padding:0;margin:0;}
+body{font-size:12px;font-family:"微软雅黑";}
+body,dl,dd,h1,h2,h3,h4,h5,h6,p{margin:0;}
+h1,h2,h3,h4,h5,h6{font-weight:normal;font-size:12px; font-family:"微软雅黑";}
+img{vertical-align:bottom;border:none;}
+ul,ol{margin:0;padding:0;list-style:none;}
+strong,b,th{font-weight:normal;}		
+a{text-decoration:none; color:#333;}
+input{padding:0;margin:0;border:0;}
+textarea{ resize:none; overflow:auto;}
+
+/*清浮动*/
+.clearfix{*zoom:1;}
+.clearfix:after{content:"";clear:both;display:block;}
+
+.box{background:#fff;width:100%;}
+/*-----logo-----*/
+.logo{background:#fff;height:78px;}
+.logoBox{width:1000px;height:78px;margin:0 auto;}
+.logo img{float:left;}
+.logoBoxR{float:right;padding-top:24px;}
+.logoBoxR a span{display:inline-block;font-size:12px;color:#b67c01;position:relative;top:0px;right:4px;}
+.logoBoxR input{height:29px;border:1px solid #b67c01;margin-right:5px;outline:none;padding-left:5px;}
+.logoBoxR img{position:relative;left:190px;top:5px;}
+
+/*-----benner---nav-----*/
+.benner_nav_bg{width:100%;height:50px;background:#2f3d57;}
+.benner_nav{width:1000px;height:50px;margin:0 auto;}
+.benner_nav_bg li{float:left;width:125px;text-align:center;}
+.benner_nav_bg li:hover{background:#364e80;}
+.benner_nav_bg li a{font:20px/50px "微软雅黑";color:#fff;}

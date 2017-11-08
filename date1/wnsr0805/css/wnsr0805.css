@@ -1,0 +1,115 @@
+.log{
+	width:100%;height:94px;background:#3A261D;
+}
+.logo, .fonterBox, .contBox, .cont_Mid, .cont_bottom{width:1000px;margin:0 auto;}
+.logo1{
+	margin-top:8px;text-align: center;
+}
+.sc{margin:0px 54px 0px 51px;}
+/*-----------------------------------------------------*/
+.content{
+	background:url(../image/wnsr0805/bg01.jpg) no-repeat  ;
+	width:auto;height:1110px;
+}
+.contBox{position:relative;}
+.conUl{position:relative;padding-top:22px;height:100%;}
+.conUl li{position: absolute;
+	width:134px;height:114px;margin-bottom:10px;text-align:center;
+	background:url(../image/wnsr0805/img01.png) no-repeat center;padding-top:24px;
+}
+.conUl li:hover{background:url(../image/wnsr0805/img02.png) no-repeat center;}
+.conUl li span{
+	display:block;font-weight: bold;line-height:25px;font-size:14px;
+}
+.Asp1{color:#FEBC35;}
+.Asp3{color:#fff;}
+.Asp2{color:#FA03D6;}
+.Bsp2{color:#10D619;}
+.Csp2{color:#00FFFF;}
+.conLi2{top:168px;}
+.conLi3{top:314px;}
+.conUl li:nth-child(even){right:28px;}
+.conUl li:nth-child(add){left:28px;}
+.cont_Mid{
+	background:#5C3820;padding:20px 15px;border:1px solid #A06D3E;
+}
+
+.Mid_ul{height:88px}
+.Mid_ul li{float:left;width:90px;height:74px;text-align:center;margin-right:32px;}
+.Mid_ul li a{padding-top:42px;display:block;color:#914C20;}
+.Mid_ul .Mid_li1 a{background:url(../image/wnsr0805/img03.png) no-repeat 28px top;}
+.Mid_ul .Mid_li2 a{background:url(../image/wnsr0805/img03.png) no-repeat -95px top;}
+.Mid_ul .Mid_li3 a{background:url(../image/wnsr0805/img03.png) no-repeat -220px top;}
+.Mid_ul .Mid_li4 a{background:url(../image/wnsr0805/img03.png) no-repeat -350px top;}
+.Mid_ul .Mid_li5 a{background:url(../image/wnsr0805/img03.png) no-repeat -470px top;}
+.Mid_ul .Mid_li6 a{background:url(../image/wnsr0805/img03.png) no-repeat -595px top;}
+.Mid_ul .Mid_li7 a{background:url(../image/wnsr0805/img03.png) no-repeat -720px top;}
+.Mid_ul .Mid_li8 a{background:url(../image/wnsr0805/img03.png) no-repeat -840px top;}
+.Mid_ul .Mid_li1 a:hover{background:url(../image/wnsr0805/img04.png) no-repeat 28px top;color:#ECCD50;}
+.Mid_ul .Mid_li2 a:hover{background:url(../image/wnsr0805/img04.png) no-repeat -95px top;color:#ECCD50;}
+.Mid_ul .Mid_li3 a:hover{background:url(../image/wnsr0805/img04.png) no-repeat -220px top;color:#ECCD50;}
+.Mid_ul .Mid_li4 a:hover{background:url(../image/wnsr0805/img04.png) no-repeat -350px top;color:#ECCD50;}
+.Mid_ul .Mid_li5 a:hover{background:url(../image/wnsr0805/img04.png) no-repeat -470px top;color:#ECCD50;}
+.Mid_ul .Mid_li6 a:hover{background:url(../image/wnsr0805/img04.png) no-repeat -595px top;color:#ECCD50;}
+.Mid_ul .Mid_li7 a:hover{background:url(../image/wnsr0805/img04.png) no-repeat -720px top;color:#ECCD50;}
+.Mid_ul .Mid_li8 a:hover{background:url(../image/wnsr0805/img04.png) no-repeat -840px top;color:#ECCD50;}
+
+.cont_bottom{
+	padding: 30px 15px 20px 20px;
+    margin-bottom: 150px;
+    position: relative;
+    border:2px solid #5C3B21;
+    top:300px;
+    display:block;
+}
+.Bott_div{display: block;}
+.Bott_div img{
+	left: 330px;
+    top: -60px;
+    position: absolute;
+}
+.lBox{
+    width: 320px;
+    text-align: center;
+    float: left;
+}
+.ttl{margin-bottom:5px;}
+.cont_bottom p{
+    color: rgb(187, 140, 111);
+    line-height: 2;
+    font-size: 12px;
+}
+.rBox{
+	width: 320px;
+	text-align: center;
+	float: right;
+}
+
+
+
+/*-----------------------------------------------------*/
+.footer{
+	background:#271811;width:100%;height:124px;padding-top:13px;
+	position:fixed;bottom:-60px;
+}
+.footer:hover{
+	bottom:0px;
+}
+.footer ul{height:67px;}
+.footer ul li {
+	width:115px;float:left;text-align:center;color:#fff;margin-right:30px;
+}
+.footer ul li:hover{color:#FFF45C;}
+.footer ul li p{
+	width:115px;border:1px solid #5A5A58;line-height:31px;
+}
+.footer ul li span{line-height:16px;}
+.fonterImg{
+	background:url(../image/wnsr0805/link.png) no-repeat right top;
+	width:214px;height:43px;float:left;margin-right:20px;
+}
+.fonterDiv{
+	color:#A1A1A1;
+}
+.fonterDiv a{color:#FFF45C;text-decoration:underline;}
+.fonterDiv a:hover{text-decoration: none;}

@@ -1,0 +1,61 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>index首页</title>
+	<!--<link rel="stylesheet" type="text/css" href="<?php echo CSS_URL; ?>index.css"/>-->
+	<link rel="stylesheet" type="text/css" href="/shop/Public/css/Index/index.css"/>
+</head>
+<body>
+	<div class="box">
+		<div class="maskBox1">
+			<form action="">
+				<div class="leftDiv">
+					<span>会员帐号：</span>
+					<span>VIP等级：</span>
+					<span>申请专属域名：</span>
+					<span>备用专属域名：</span>
+					<span>验证码：</span>
+				</div>
+				<div class="clearfix rightDiv">
+					<input type="text" placeholder="填写会员账号" />
+					<input type="text" placeholder="填写VIP等级" />
+					<input type="text" placeholder="填写申请专属域名" />
+					<input type="text" placeholder="填写备用专属域名" />
+					<input type="text" class="code_input" value="" placeholder="填写验证码">
+						<span class="v_container1" class="v_container1" style="width:100px;height:40px;">
+							<img src="/shop/php/vc.php" onclick="this.src='/shop/php/vc.php/'+Math.random()">
+						</span>
+					</input>
+				</div>
+				<div class="bottomDiv">
+					<input type="submit" class="my_button" value="立即申请1"/>
+				</div>
+			</form>
+			<form action="">
+				<div class="leftDiv">
+					<span>会员帐号：</span>
+					<span>VIP等级：</span>
+					<span>申请专属域名：</span>
+					<span>备用专属域名：</span>
+					<span>验证码：</span>
+				</div>
+				<div class="clearfix rightDiv">
+					<input type="text" placeholder="填写会员账号" />
+					<input type="text" placeholder="填写VIP等级" />
+					<input type="text" placeholder="填写申请专属域名" />
+					<input type="text" placeholder="填写备用专属域名" />
+					<input type="text" class="code_input" value="" placeholder="填写验证码">
+						<span class="v_container1" class="v_container1" style="width:100px;height:40px;">
+							<img src="/shop/php/vc.php" onclick="this.src='/shop/php/vc.php/'+Math.random()">
+						</span>
+					</input>
+				</div>
+				<div class="bottomDiv">
+					<input type="submit" class="my_button" value="立即申请2"/>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

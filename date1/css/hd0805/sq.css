@@ -1,0 +1,31 @@
+.maskBox{
+	width:100%;height:100%;background:rgba(4,4,1,0.7);
+	position:fixed;z-index: 10000;top:0px;/*display:none;*/
+}
+.mask{position:relative;left:50%;top:50%;margin-left:-371px;margin-top:-292px;
+	width:742px;height:584px;text-align:center;
+	background:url(../../image/masking.png) no-repeat;
+}
+.mask p{color:#333;}
+.img1{margin-top:60px;}
+.mask button{
+	width:94px;height:35px;background:#D4AE53;border-radius:2px;
+	color:#fff;font:bold 14px "微软雅黑";border:none;cursor:pointer;}
+.mask .p1{
+	font:bold 24px/25px "微软雅黑";
+	color: #fdfd73;
+    margin-top:26px;
+    text-align:center;
+    margin-bottom:40px;
+}
+.maLeft, .maRight{text-align:left;color:#949494;font-size:14px;}
+.maLeft span, .maRight span{
+	margin-left:0;width:240px;height:50px;text-align:left;
+	display:inline-block;text-align: right;
+}
+.maLeft input, .maRight select{padding-left:15px;width:238px;height:34px;border:1px solid #7C7C7C;}
+.maLeft input{width:223px;}
+.mask a{
+	display:inline-block;background:url(../../image/close.png) no-repeat left top;
+	width:101px;height:113px;position:absolute;top:0px;right:0px;
+}

@@ -1,0 +1,8 @@
+*{margin:0;padding:0;}
+body{background: #009BDA;}
+div{
+	width:500px;
+	height:200px;
+	border:1px solid #666;
+	background:#00008B;
+}
